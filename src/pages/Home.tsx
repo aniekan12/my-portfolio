@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Smartphone, Code, Zap, Users } from 'lucide-react';
+import { ArrowRight, Smartphone, Zap, Users } from 'lucide-react';
 
 const Home = () => {
     return (
@@ -23,7 +23,6 @@ const Home = () => {
                                 <span className="text-amber-700">Mobile Development</span>
                             </div>
                             <div className="flex items-center space-x-2 bg-amber-100 px-4 py-2 rounded-full border border-amber-300">
-                                <Code className="h-5 w-5 text-amber-600" />
                                 <span className="text-amber-700">Flutter/Dart</span>
                             </div>
                             <div className="flex items-center space-x-2 bg-amber-100 px-4 py-2 rounded-full border border-amber-300">

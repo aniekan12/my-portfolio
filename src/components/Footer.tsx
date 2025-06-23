@@ -1,4 +1,4 @@
-import { Code, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -30,7 +30,6 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Logo and Description */}
                     <div className="flex items-center space-x-2 mb-6 md:mb-0">
-                        <Code className="h-8 w-8 text-amber-600" />
                         <div>
                             <span className="text-xl font-bold text-gray-800">Aniekan</span>
                             <p className="text-sm text-gray-500">Software Engineer</p>
@@ -57,7 +56,7 @@ const Footer = () => {
                 {/* Copyright */}
                 <div className="mt-8 pt-8 border-t border-amber-200 text-center">
                     <p className="text-gray-500">
-                        © {currentYear} Aniekan. All rights reserved. Built with React, TypeScript, and Tailwind CSS.
+                        © {currentYear} Aniekan. All rights reserved. Built with ❤️.
                     </p>
                 </div>
             </div>
