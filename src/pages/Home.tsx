@@ -26,6 +26,9 @@ const Home = () => {
                                 <span className="text-amber-700">Flutter/Dart</span>
                             </div>
                             <div className="flex items-center space-x-2 bg-amber-100 px-4 py-2 rounded-full border border-amber-300">
+                                <span className="text-amber-700">React Native</span>
+                            </div>
+                            <div className="flex items-center space-x-2 bg-amber-100 px-4 py-2 rounded-full border border-amber-300">
                                 <Zap className="h-5 w-5 text-amber-600" />
                                 <span className="text-amber-700">React/TypeScript</span>
                             </div>

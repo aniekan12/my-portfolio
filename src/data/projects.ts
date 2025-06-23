@@ -84,7 +84,7 @@ export const projects: Project[] = [
       "Obodo is an innovative Igbo language learning app designed to help users learn and preserve the Igbo language through interactive lessons and cultural content.",
     icon: BookOpen,
     category: "Mobile App",
-    tech: ["Flutter", "Dart", "Educational Content"],
+    tech: ["Flutter", "Dart", "Educational Content", "Transcription"],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.droid.obodo&hl=en",
