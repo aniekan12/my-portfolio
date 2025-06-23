@@ -31,7 +31,7 @@ const Footer = () => {
                     {/* Logo and Description */}
                     <div className="flex items-center space-x-2 mb-6 md:mb-0">
                         <div>
-                            <span className="text-xl font-bold text-gray-800">Aniekan</span>
+                            <span className="text-xl font-bold text-gray-800">Aniekan.</span>
                             <p className="text-sm text-gray-500">Software Engineer</p>
                         </div>
                     </div>
