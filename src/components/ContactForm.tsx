@@ -24,34 +24,34 @@ const ContactForm = () => {
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
-        try {
-            // Netlify Forms will handle the submission automatically
-            // We just need to encode the form data
-            const formDataEncoded = new URLSearchParams();
-            formDataEncoded.append('form-name', 'contact');
-            formDataEncoded.append('name', formData.name);
-            formDataEncoded.append('email', formData.email);
-            formDataEncoded.append('subject', formData.subject);
-            formDataEncoded.append('message', formData.message);
+        // try {
+        //     // Netlify Forms will handle the submission automatically
+        //     // We just need to encode the form data
+        //     const formDataEncoded = new URLSearchParams();
+        //     formDataEncoded.append('form-name', 'contact');
+        //     formDataEncoded.append('name', formData.name);
+        //     formDataEncoded.append('email', formData.email);
+        //     formDataEncoded.append('subject', formData.subject);
+        //     formDataEncoded.append('message', formData.message);
 
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: formDataEncoded.toString(),
-            });
+        //     const response = await fetch('/', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        //         body: formDataEncoded.toString(),
+        //     });
 
-            if (response.ok) {
-                setSubmitStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            } else {
-                setSubmitStatus('error');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            setSubmitStatus('error');
-        } finally {
-            setIsSubmitting(false);
-        }
+        //     if (response.ok) {
+        //         setSubmitStatus('success');
+        //         setFormData({ name: '', email: '', subject: '', message: '' });
+        //     } else {
+        //         setSubmitStatus('error');
+        //     }
+        // } catch (error) {
+        //     console.error('Form submission error:', error);
+        //     setSubmitStatus('error');
+        // } finally {
+        //     setIsSubmitting(false);
+        // }
     };
 
     const isFormValid = formData.name && formData.email && formData.subject && formData.message;
@@ -157,8 +157,8 @@ const ContactForm = () => {
                     type="submit"
                     disabled={!isFormValid || isSubmitting}
                     className={`w-full px-6 py-3 font-semibold rounded-lg transition-all duration-200 transform ${isFormValid && !isSubmitting
-                            ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 hover:scale-105'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 hover:scale-105'
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                         }`}
                 >
                     {isSubmitting ? (
