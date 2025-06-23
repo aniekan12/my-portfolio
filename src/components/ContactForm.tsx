@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { submitContactForm } from '../services/contactService';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -9,7 +12,6 @@ const ContactForm = () => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -22,36 +24,15 @@ const ContactForm = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setSubmitStatus('idle');
 
-        // try {
-        //     // Netlify Forms will handle the submission automatically
-        //     // We just need to encode the form data
-        //     const formDataEncoded = new URLSearchParams();
-        //     formDataEncoded.append('form-name', 'contact');
-        //     formDataEncoded.append('name', formData.name);
-        //     formDataEncoded.append('email', formData.email);
-        //     formDataEncoded.append('subject', formData.subject);
-        //     formDataEncoded.append('message', formData.message);
-
-        //     const response = await fetch('/', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        //         body: formDataEncoded.toString(),
-        //     });
-
-        //     if (response.ok) {
-        //         setSubmitStatus('success');
-        //         setFormData({ name: '', email: '', subject: '', message: '' });
-        //     } else {
-        //         setSubmitStatus('error');
-        //     }
-        // } catch (error) {
-        //     console.error('Form submission error:', error);
-        //     setSubmitStatus('error');
-        // } finally {
-        //     setIsSubmitting(false);
-        // }
+        const success = await submitContactForm(formData);
+        if (success) {
+            toast.success("Message sent successfully! I'll get back to you soon.");
+            setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+            toast.error('Failed to send message. Please try again or contact me directly.');
+        }
+        setIsSubmitting(false);
     };
 
     const isFormValid = formData.name && formData.email && formData.subject && formData.message;
@@ -59,36 +40,7 @@ const ContactForm = () => {
     return (
         <div className="bg-white/60 rounded-xl p-8 border border-amber-200 shadow-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a Message</h2>
-
-            {/* Success/Error Messages */}
-            {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <p className="text-green-700">Message sent successfully! I'll get back to you soon.</p>
-                </div>
-            )}
-
-            {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-lg flex items-center space-x-2">
-                    <AlertCircle className="h-5 w-5 text-red-600" />
-                    <p className="text-red-700">Failed to send message. Please try again or contact me directly.</p>
-                </div>
-            )}
-
-            <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-                className="space-y-6"
-            >
-                {/* Netlify Forms hidden fields */}
-                <input type="hidden" name="form-name" value="contact" />
-                <div className="hidden">
-                    <input name="bot-field" />
-                </div>
-
+            <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Name *
