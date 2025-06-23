@@ -25,6 +25,7 @@ export interface Value {
 export const skills: Skill[] = [
   { name: "Flutter/Dart", icon: Smartphone, level: "Expert" },
   { name: "React/TypeScript", icon: Code, level: "Advanced" },
+  { name: "React Native", icon: Smartphone, level: "Advanced" },
   { name: "REST API Integration", icon: Database, level: "Expert" },
   { name: "Mobile Architecture", icon: TrendingUp, level: "Expert" },
   { name: "Team Leadership", icon: Users, level: "Advanced" },

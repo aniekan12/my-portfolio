@@ -27,7 +27,7 @@ const About = () => {
                                     Throughout my career, I've had the privilege of working on diverse projects ranging from payment solutions to language learning apps, each presenting unique challenges that have helped me grow both technically and professionally.
                                 </p>
                                 <p>
-                                    I specialize in Flutter/Dart development, React/TypeScript, and have extensive experience with REST API integration and modern mobile architecture patterns. My expertise extends to team leadership, where I've successfully guided development teams to deliver high-quality products on time.
+                                    I specialize in Flutter/Dart development, React/TypeScript, React Native, and have extensive experience with REST API integration and modern mobile architecture patterns. My expertise extends to team leadership, where I've successfully guided development teams to deliver high-quality products on time.
                                 </p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ const About = () => {
                 <div className="max-w-7xl mx-auto">
                     <Hero
                         title="Technical Skills"
-                        subtitle="My expertise spans across mobile development, web technologies, and software architecture."
+                        subtitle="My expertise spans across mobile development (Flutter, React Native), web technologies (React/TypeScript), and software architecture."
                     />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
