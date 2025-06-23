@@ -11,7 +11,7 @@ const About = () => {
                 <div className="max-w-7xl mx-auto">
                     <Hero
                         title="About Me"
-                        subtitle="A passionate software engineer dedicated to creating innovative mobile solutions that make a difference."
+                        subtitle="A passionate software engineer dedicated to creating innovative solutions that make a difference."
                         highlightedWord="Me"
                     />
 
@@ -37,7 +37,7 @@ const About = () => {
                             <div className="space-y-4">
                                 <div className="flex items-start space-x-3">
                                     <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-gray-600">Delivered 7+ production mobile applications across iOS and Android platforms</p>
+                                    <p className="text-gray-600">Delivered 7+ production mobile applications across iOS, Android and Web platforms</p>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>

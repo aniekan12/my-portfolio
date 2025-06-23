@@ -7,7 +7,7 @@ const Projects = () => {
     const projectStats = [
         { value: '7+', label: 'Applications Delivered' },
         { value: '100k+', label: 'Total Downloads' },
-        { value: '2', label: 'Platforms Supported' },
+        { value: '3', label: 'Platforms Supported' },
         { value: '4+', label: 'Years of Development' }
     ];
 
